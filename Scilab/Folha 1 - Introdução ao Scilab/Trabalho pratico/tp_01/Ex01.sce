@@ -56,3 +56,9 @@ title('Energia','fontsize',5,'color','red')
 xlabel('Tempo','color','red')
 ylabel('Amplitude(HZ)','color','red')
 plot(intervalo_tempo_v2,gt_2,'red')
+
+
+ht_1 = gt_1 * st_1;
+ht_2 = gt_2 * st_2;
+
+

@@ -16,7 +16,7 @@ Intervalo_de_amostras_1 = t_1(2) - t_1(1); // Distancia entre 2 amostras [t(n) -
 ti_2 = -2 ; // tempo inicial 
 tf_2 = 2 ; // tempo final
 
-t_2 = [ti_2 : 1/(N/2) : tf_2 ] // gerando o intervalo de tempo com N amostras 
+t_2 = [ti_2 : 2/N : tf_2 ]; // gerando o intervalo de tempo com N amostras 
 
 intervalo_de_amostras_2 = t_2(2) - t_1(1);
 

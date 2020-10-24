@@ -1,4 +1,8 @@
 clear all; 
+//criar figure 
+g1 = scf(0);
+g2 = scf(1);
+
 
 N = 1024; //dimensao da amostra
 ti = 0;  // tempo inicial
@@ -26,7 +30,7 @@ st_2 = st(frequencia,intervalo_tempo_v2);
 
 // 3. 
 Amplitude = 4.3;
-st_1_v2 = Amplitude .* st_1_v2;
+st_1_v2 = Amplitude .* st_1;
 st_2 = Amplitude .* st_2;
 
 
@@ -36,6 +40,7 @@ gt_1 = gt(alpha,intervalo_tempo);
 gt_2 = gt(alpha,intervalo_tempo_v2);
 
 // 5 
+scf(g1);
 subplot(2,2,1)
 title('Sinal Continuo senoidal','fontsize',5,'color','blue')
 xlabel('Tempo','color','blue')
@@ -58,7 +63,17 @@ ylabel('Amplitude(HZ)','color','red')
 plot(intervalo_tempo_v2,gt_2,'red')
 
 
-ht_1 = gt_1 * st_1;
-ht_2 = gt_2 * st_2;
-
+ht_1 = gt_1 .* st_1;
+ht_2 = gt_2 .* st_2;
+scf(g2);
+subplot(2,1,1)
+title('Resposta final','fontsize',5,'color','green')
+xlabel('Tempo','color','green')
+ylabel('Amplitude(HZ)','color','green')
+plot(intervalo_tempo,ht_1,'color','green');
+subplot(2,1,2)
+title('Resposta final','fontsize',5,'color','green')
+xlabel('Tempo','color','green')
+ylabel('Amplitude(HZ)','color','green')
+plot(intervalo_tempo_v2,ht_2,'color','green');
 
